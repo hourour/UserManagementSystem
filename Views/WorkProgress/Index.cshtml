@@ -1,0 +1,27 @@
+@model IEnumerable<UserManagementSystem.Models.WorkProgress>
+
+<h2>工作進度列表</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>任務名稱</th>
+            <th>緊急程度</th>
+            <th>截止日期</th>
+            <th>進度階段</th>
+            <th>負責使用者</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TaskName</td>
+                <td>@item.Urgency</td>
+                <td>@item.Deadline?.ToString("yyyy-MM-dd") </td>
+                <td>@item.ProgressStage</td>
+                <td>@item.User?.Name</td>  <!-- 如果 WorkProgress 有 User 導覽屬性 -->
+            </tr>
+        }
+    </tbody>
+</table>

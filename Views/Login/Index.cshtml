@@ -1,0 +1,28 @@
+@model UserManagementSystem.Models.LoginViewModel
+
+<h2 class="text-center">使用者登入</h2>
+
+<form method="post" class="mx-auto" style="max-width: 400px;">
+    <div class="mb-3">
+        <label asp-for="Account" class="form-label">帳號</label>
+        <input asp-for="Account" class="form-control" />
+        <span asp-validation-for="Account" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Password" class="form-label">密碼</label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">登入</button>
+    </div>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger mt-3" role="alert">
+            @ViewBag.Error
+        </div>
+    }
+</form>

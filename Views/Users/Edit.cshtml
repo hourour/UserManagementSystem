@@ -1,0 +1,20 @@
+@model UserManagementSystem.Models.User
+
+<h2>編輯使用者</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <button type="submit">儲存變更</button>
+</form>
+
+<a asp-action="Index">返回清單</a>
